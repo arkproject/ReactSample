@@ -12,6 +12,7 @@ import React from 'react';
 
 export const About = () => {
   return (
-   <h2>About component</h2>
+   <h2>About component !!</h2>
+   <p>Benvenuti nella pagina about</p>
   );
 };
