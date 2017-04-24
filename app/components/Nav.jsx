@@ -30,7 +30,7 @@ export class Nav extends React.Component {
               <input type="search" placeholder="Search weather" />
             </li>
             <li>
-              <input type="submit" className="button" value="Ger Weather" />
+              <input type="submit" className="button" value="GeT Weather" />
             </li>
           </ul>
         </form>
