@@ -4,7 +4,13 @@ import { NavLink } from 'react-router-dom';
 export class Nav extends React.Component {
   onSearch (event) {
     event.preventDefault();
-    alert('Da implementare');
+    const location = this.locationRef.value;
+    const encodedLocation = encodeURIComponent(location);
+
+    if (location.length > 0){
+        this.locationRef.value = '';
+        window.location.hash = '#/?location=' + encodedLocation;
+    }
   }
   render() {
     return (
@@ -13,7 +19,7 @@ export class Nav extends React.Component {
           <ul className="menu">
             <li className="menu-text">React Weather App</li>
             <li>
-              <NavLink to="/" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>Get Weather</NavLink>
+              <NavLink to="/" activeClassName="active"  activeStyle={{fontWeight: 'bold'}} replace >Get Weather</NavLink>
             </li>
             <li>
               <NavLink to="/about" activeClassName="active"  activeStyle={{fontWeight: 'bold'}}>About</NavLink>
@@ -24,10 +30,10 @@ export class Nav extends React.Component {
           </ul>
         </div>
         <div className="top-bar-right">
-        <form onSubmit={this.onSearch}>
+        <form onSubmit={this.onSearch.bind(this)}>
           <ul className="menu">
             <li>
-              <input type="search" placeholder="Search weather" />
+              <input type="search" placeholder="Search weather" ref={(input) => { this.locationRef = input; }} />
             </li>
             <li>
               <input type="submit" className="button" value="GeT Weather" />

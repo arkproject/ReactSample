@@ -13,7 +13,7 @@ export class WeatherForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.onFormSubmit.bind(this)}>
-          <input type="text" ref={(input) => { this.locationRef = input; }} />
+          <input type="text" placeholder="Search weather by city" ref={(input) => { this.locationRef = input; }} />
           <button className ="button expanded hollow">Get Weather</button>
         </form>
       </div>

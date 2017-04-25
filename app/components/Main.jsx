@@ -24,9 +24,9 @@ export const Main = (props) => {
       <Nav />
       <div className="row">
         <div className="columns medium-6 large-4 small-centered" >
-           <Route exact path="/" component={Weather} />
-           <Route path="/about" component={About} />
-           <Route path="/examples" component={Examples} />
+           <Route exact path="/" component={Weather}  />
+           <Route path="/about" component={About}  />
+           <Route path="/examples" component={Examples}  />
 
         </div>
       </div>

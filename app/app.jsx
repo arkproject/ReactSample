@@ -8,6 +8,10 @@ import { Main } from 'Main';
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
+// App css
+require('style-loader!css-loader!sass-loader!applicationStyles')
+
+
 ReactDOM.render(
 
   <div>
